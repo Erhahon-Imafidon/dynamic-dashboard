@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Navbar, Menu, Footer } from '../index.tsx';
-import '../../styles/global.scss';
+import './layout.scss';
 
 const Layout = () => {
     return (
