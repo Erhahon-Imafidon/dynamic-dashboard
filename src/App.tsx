@@ -1,10 +1,10 @@
-
+import Home from './home/Home.tsx';
 const App = () => {
-  return (
-    <div>
-       App
-    </div>
-  )
-}
+    return (
+        <>
+            <Home />
+        </>
+    );
+};
 
-export default App
+export default App;
