@@ -1,5 +1,6 @@
 import './navbar.scss';
 import Logo from '../../assets/images/kode-icon-nobg.png';
+import Kate from '../../assets/images/kate.jpg';
 import {
     Search,
     Expand,
@@ -12,8 +13,10 @@ const Navbar = () => {
     return (
         <section className="navbar">
             <div className="logo">
-                <img src={Logo} alt="Logo" />
-                <span>KodeGuru</span>
+                <div className="logoImg">
+                    <img src={Logo} alt="Logo" />
+                </div>
+                <span>kodeguru</span>
             </div>
             <div className="icons">
                 <img src={Search} alt="search" className="icon" />
@@ -23,7 +26,10 @@ const Navbar = () => {
                     <img src={Notification} alt="notification" />
                     <span>1</span>
                 </div>
-                <div className="user"></div>
+                <div className="user">
+                    <img src={Kate} alt="user" />
+                    <span>Kate</span>
+                </div>
                 <img src={Settings} alt="" className="icon" />
             </div>
         </section>
