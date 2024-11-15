@@ -14,8 +14,8 @@ const TopBox = () => {
                                 <p className="username">{item.username}</p>
                                 <p className="email">{item.email}</p>
                             </div>
-                            <p className="amount">{item.amount}</p>
                         </div>
+                        <p className="amount">{item.amount}</p>
                     </div>
                 ))}
             </div>
