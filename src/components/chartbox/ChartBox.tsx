@@ -2,66 +2,41 @@ import './chartBox.scss';
 import { Link } from 'react-router-dom';
 import { LineChart, Line, ResponsiveContainer, Tooltip } from 'recharts';
 
-const data = [
-    {
-        name: 'Page A',
-        uv: 4000,
-        pv: 2400,
-        amt: 2400,
-    },
-    {
-        name: 'Page B',
-        uv: 3000,
-        pv: 1398,
-        amt: 2210,
-    },
-    {
-        name: 'Page C',
-        uv: 2000,
-        pv: 9800,
-        amt: 2290,
-    },
-    {
-        name: 'Page D',
-        uv: 2780,
-        pv: 3908,
-        amt: 2000,
-    },
-    {
-        name: 'Page E',
-        uv: 1890,
-        pv: 4800,
-        amt: 2181,
-    },
-    {
-        name: 'Page F',
-        uv: 2390,
-        pv: 3800,
-        amt: 2500,
-    },
-    {
-        name: 'Page G',
-        uv: 3490,
-        pv: 4300,
-        amt: 2100,
-    },
-];
+type ChartBoxProps = {
+    icon: string;
+    title: string;
+    number: number | string;
+    chartData: object[];
+    dataKey: string;
+    color: string;
+    percentage: number;
+};
 
-const ChartBox = () => {
+const ChartBox = ({
+    chartData,
+    dataKey,
+    icon,
+    color,
+    number,
+    title,
+    percentage,
+}: ChartBoxProps) => {
     return (
         <section className="chartBox">
             <div className="boxInfo">
                 <div className="title">
-                    <img src="https://via.placeholder.com/20" alt="icon" />
-                    <span>Total Users</span>
+                    <img src={icon} alt="icon" />
+                    <span>{title}</span>
                 </div>
-                <h1>11.28</h1>
-                <Link to="/">View all</Link>
+                <h1>{number}</h1>
+                <Link to="/" style={{ color: color }}>
+                    View all
+                </Link>
             </div>
             <div className="chartInfo">
                 <div className="chart">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <LineChart width={300} height={100} data={data}>
+                    <ResponsiveContainer width="99%" height="100%">
+                        <LineChart data={chartData}>
                             <Tooltip
                                 contentStyle={{
                                     background: 'transparent',
@@ -72,8 +47,8 @@ const ChartBox = () => {
                             />
                             <Line
                                 type="monotone"
-                                dataKey="pv"
-                                stroke="#8884d8"
+                                dataKey={dataKey}
+                                stroke={color}
                                 strokeWidth={2}
                                 dot={false}
                             />
@@ -81,7 +56,14 @@ const ChartBox = () => {
                     </ResponsiveContainer>
                 </div>
                 <div className="text">
-                    <p className="percentage">45%</p>
+                    <p
+                        className="percentage"
+                        style={{
+                            color: percentage < 0 ? 'tomato' : 'limegreen',
+                        }}
+                    >
+                        {percentage}%
+                    </p>
                     <p className="duration">this month</p>
                 </div>
             </div>

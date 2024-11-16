@@ -16,6 +16,10 @@ import Calendar from './calendar.svg';
 import Backups from './backup.svg';
 import Charts from './chart.svg';
 import Logs from './log.svg';
+import UserIcon from './userIcon.svg';
+import ProductIcon from './productIcon.svg';
+import RevenueIcon from './revenueIcon.svg';
+import ConversionIcon from './conversionIcon.svg';
 
 export {
     Search,
@@ -36,4 +40,8 @@ export {
     Backups,
     Charts,
     Logs,
+    UserIcon,
+    ProductIcon,
+    RevenueIcon,
+    ConversionIcon,
 };
