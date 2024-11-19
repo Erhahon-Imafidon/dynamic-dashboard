@@ -12,18 +12,21 @@ const BarChartBox = ({ title, chartData, dataKey, color }: barChartProps) => {
     return (
         <section className="barChart">
             <h1>{title}</h1>
-            <ResponsiveContainer width="100%" height="100%">
-                <BarChart width={150} height={40} data={chartData}>
-                    <Tooltip
-                        contentStyle={{
-                            background: '#2a3447',
-                            borderRadius: '5px',
-                        }}
-                        labelStyle={{ display: 'none' }}
-                    />
-                    <Bar dataKey={dataKey} fill={color} />
-                </BarChart>
-            </ResponsiveContainer>
+            <div className="chart">
+                <ResponsiveContainer width="99%" height={150}>
+                    <BarChart data={chartData}>
+                        <Tooltip
+                            contentStyle={{
+                                background: '#2a3447',
+                                borderRadius: '5px',
+                            }}
+                            labelStyle={{ display: 'none' }}
+                            cursor={{ fill: 'none' }}
+                        />
+                        <Bar dataKey={dataKey} fill={color} />
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
         </section>
     );
 };
