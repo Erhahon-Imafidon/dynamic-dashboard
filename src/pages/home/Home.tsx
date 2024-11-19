@@ -1,5 +1,10 @@
 import './home.scss';
-import { ChartBox, TopBox, BarChartBox } from '../../components/index.tsx';
+import {
+    ChartBox,
+    TopBox,
+    BarChartBox,
+    PieChartBox,
+} from '../../components/index.tsx';
 import {
     chartBoxUser,
     chartBoxConversion,
@@ -21,7 +26,9 @@ const Home = () => {
             <div className="box box3">
                 <ChartBox {...chartBoxProduct} />
             </div>
-            <div className="box box4">Box4</div>
+            <div className="box box4">
+                <PieChartBox />
+            </div>
             <div className="box box5">
                 <ChartBox {...chartBoxRevenue} />
             </div>
