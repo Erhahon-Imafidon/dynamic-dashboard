@@ -1,0 +1,13 @@
+.bigbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+
+  .chart {
+    height: 300px;
+    width: 100%;
+  }
+}

@@ -4,6 +4,7 @@ import {
     TopBox,
     BarChartBox,
     PieChartBox,
+    BigChartBox,
 } from '../../components/index.tsx';
 import {
     chartBoxUser,
@@ -35,7 +36,9 @@ const Home = () => {
             <div className="box box6">
                 <ChartBox {...chartBoxConversion} />
             </div>
-            <div className="box box7">Box7</div>
+            <div className="box box7">
+                <BigChartBox />
+            </div>
             <div className="box box8">
                 <BarChartBox {...barChartBoxVisit} />
             </div>
