@@ -26,13 +26,7 @@ const columns: GridColDef<(typeof userRows)[number]>[] = [
         width: 150,
         editable: true,
     },
-    {
-        field: 'age',
-        headerName: 'Age',
-        type: 'number',
-        width: 110,
-        editable: true,
-    },
+
     {
         field: 'fullName',
         headerName: 'Full name',
@@ -41,6 +35,37 @@ const columns: GridColDef<(typeof userRows)[number]>[] = [
         width: 160,
         valueGetter: (__value, row) =>
             `${row.firstName || ''} ${row.lastName || ''}`,
+    },
+
+    {
+        field: 'email',
+        headerName: 'Email',
+        type: 'string',
+        width: 170,
+        editable: true,
+    },
+
+    {
+        field: 'phone',
+        headerName: 'Phone',
+        type: 'number',
+        width: 110,
+        editable: true,
+    },
+    {
+        field: 'createdAt',
+        headerName: 'createdAt',
+        type: 'number',
+        width: 170,
+        editable: true,
+    },
+
+    {
+        field: 'verified',
+        headerName: 'Verified',
+        type: 'boolean',
+        width: 170,
+        editable: true,
     },
 ];
 
