@@ -5,7 +5,7 @@ import {
     PieChartBox,
     BigChartBox,
 } from '../../components/index.tsx';
-import './homt e.scss';
+import './home.scss';
 import {
     chartBoxUser,
     chartBoxConversion,
