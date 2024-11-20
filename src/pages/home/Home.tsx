@@ -1,4 +1,3 @@
-import './home.scss';
 import {
     ChartBox,
     TopBox,
@@ -6,6 +5,7 @@ import {
     PieChartBox,
     BigChartBox,
 } from '../../components/index.tsx';
+import './homt e.scss';
 import {
     chartBoxUser,
     chartBoxConversion,
