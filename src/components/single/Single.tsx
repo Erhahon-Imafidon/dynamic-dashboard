@@ -110,6 +110,7 @@ const Single = ({ img, title, info, chart, activities }: SingleProps) => {
 
                                 {chart.dataKeys.map((dataKey) => (
                                     <Line
+                                        key={dataKey.name}
                                         type="monotone"
                                         dataKey={dataKey.name}
                                         stroke={dataKey.color}
@@ -127,7 +128,7 @@ const Single = ({ img, title, info, chart, activities }: SingleProps) => {
                     <ul>
                         {activities.map(
                             (activity: { text: string; time: string }) => (
-                                <li key={activity.text}>
+                                <li key={`${activity.text}-${activity.time}`}>
                                     <div>
                                         <p>{activity.text}</p>
                                         <time>{activity.time}</time>
