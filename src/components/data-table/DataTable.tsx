@@ -4,6 +4,7 @@ import {
     GridToolbar,
     GridRenderCellParams,
 } from '@mui/x-data-grid';
+import { useState } from 'react';
 import './dataTable.scss';
 import { View, Delete } from '../../assets/icons/index.tsx';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,17 @@ type DataTablePros = {
     slug?: string;
 };
 
-const DataTable = ({ columns, rows, slug }: DataTablePros) => {
+const DataTable = ({ columns, rows: initialRows, slug }: DataTablePros) => {
+    const [rows, setRows] = useState(initialRows);
+
+    // delete an item
+    const handleDelete = (id: number) => {
+        // axios.delete(`api/${slug}/${id}`); if you have an external api
+        const updatedRows = rows.filter((row: any) => row.id !== id);
+        setRows(updatedRows);
+        console.log(id + ' deleted a user on that number');
+    };
+
     const actionColumn: GridColDef = {
         field: 'action',
         headerName: 'Action',
@@ -37,7 +48,7 @@ const DataTable = ({ columns, rows, slug }: DataTablePros) => {
             <DataGrid
                 className={'dataGrid'}
                 rows={rows}
-                columns={columns}
+                columns={[...columns, actionColumn]}
                 initialState={{
                     pagination: {
                         paginationModel: {
@@ -52,7 +63,7 @@ const DataTable = ({ columns, rows, slug }: DataTablePros) => {
                         quickFilterProps: { debounceMs: 500 },
                     },
                 }}
-                pageSizeOptions={[5]}
+                pageSizeOptions={[5, 10]}
                 checkboxSelection
                 disableRowSelectionOnClick
                 disableColumnFilter
