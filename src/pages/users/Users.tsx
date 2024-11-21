@@ -29,16 +29,6 @@ const columns: GridColDef<(typeof userRows)[number]>[] = [
     },
 
     {
-        field: 'fullName',
-        headerName: 'Full name',
-        description: 'This column has a value getter and is not sortable.',
-        sortable: false,
-        width: 160,
-        valueGetter: (__value, row) =>
-            `${row.firstName || ''} ${row.lastName || ''}`,
-    },
-
-    {
         field: 'email',
         headerName: 'Email',
         type: 'string',

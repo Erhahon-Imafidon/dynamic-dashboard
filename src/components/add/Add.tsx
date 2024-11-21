@@ -36,7 +36,7 @@ const Add = ({ columns, setOpen, slug }: AddProps) => {
                                 item.field !== 'id' && item.field !== 'avatar'
                         )
                         .map((column) => (
-                            <div key={column.field}>
+                            <div key={column.field} className="item">
                                 <label htmlFor={column.field}>
                                     {column.headerName}
                                 </label>
