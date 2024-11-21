@@ -77,10 +77,6 @@ const Single = () => {
                             <span className="itemTitle">Username:</span>
                             <span className="itemValue">John Doe</span>
                         </div>
-                        <div className="item">
-                            <span className="itemTitle">Username:</span>
-                            <span className="itemValue">John Doe</span>
-                        </div>
                     </div>
                     <div className="item"></div>
                 </div>

@@ -8,6 +8,7 @@ import PieChartBox from './piechart/PieChartBox.tsx';
 import BigChartBox from './bigchartbox/BigChartBox.tsx';
 import DataTable from './data-table/DataTable.tsx';
 import Add from './add/Add.tsx';
+import Single from './single/Single.tsx';
 
 export {
     Navbar,
@@ -20,4 +21,5 @@ export {
     BigChartBox,
     DataTable,
     Add,
+    Single,
 };
