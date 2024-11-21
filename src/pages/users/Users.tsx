@@ -72,6 +72,7 @@ const columns: GridColDef<(typeof userRows)[number]>[] = [
 
 const Users = () => {
     const [open, setOpen] = useState(false);
+
     return (
         <section className="users">
             <div className="info">
