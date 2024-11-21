@@ -50,7 +50,7 @@ const Single = ({ img, title, info, chart, activities }: SingleProps) => {
                     <div className="chart">
                         <ResponsiveContainer width="99%" height="100%">
                             <LineChart
-                                data={chart?.data || data}
+                                data={chart?.data}
                                 margin={{
                                     top: 5,
                                     right: 30,
