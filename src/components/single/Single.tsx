@@ -8,6 +8,7 @@ import {
     ResponsiveContainer,
 } from 'recharts';
 import './single.scss';
+import Avatar from '../../assets/icons/noavatar.png';
 
 const data = [
     {
@@ -60,7 +61,7 @@ const Single = () => {
             <div className="view">
                 <div className="info">
                     <div className="topInfo">
-                        <img src="" alt="" />
+                        <img src={Avatar} alt="" />
                         <h1>John Doe</h1>
                         <button>Update</button>
                     </div>
@@ -80,6 +81,7 @@ const Single = () => {
                     </div>
                     <div className="item"></div>
                 </div>
+                <hr />
                 <div className="chart">
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart
@@ -113,7 +115,7 @@ const Single = () => {
                 </div>
             </div>
             <div className="activities">
-                <h1>Latest Activities</h1>
+                <h2>Latest Activities</h2>
                 <ul>
                     <li>
                         <div>
