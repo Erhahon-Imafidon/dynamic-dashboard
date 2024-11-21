@@ -1,5 +1,5 @@
 import './navbar.scss';
-import Logo from '../../assets/images/kode-icon-nobg.png';
+import Logo from '../../assets/images/Kode-icon-nobg.png';
 import Kate from '../../assets/images/kate.jpg';
 import {
     Search,
