@@ -20,6 +20,8 @@ import UserIcon from './userIcon.svg';
 import ProductIcon from './productIcon.svg';
 import RevenueIcon from './revenueIcon.svg';
 import ConversionIcon from './conversionIcon.svg';
+import View from './view.svg';
+import Delete from './delete.svg';
 
 export {
     Search,
@@ -44,4 +46,6 @@ export {
     ProductIcon,
     RevenueIcon,
     ConversionIcon,
+    View,
+    Delete,
 };
