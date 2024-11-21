@@ -56,21 +56,21 @@ const data = [
 ];
 
 type SingleProps = {
-    id: number;
+    // id: number;
     img?: string;
     title: string;
-    info: string;
+    info: object;
     chart?: {
-        datakeys: { name: string; color: string }[];
+        dataKeys: { name: string; color: string }[];
         data: object[];
     };
-    activities: {
-        title: string;
+    activities?: {
+        text: string;
         time: string;
-    };
+    }[];
 };
 
-const Single = ({ id, img, title, info, chart, activities }: SingleProps) => {
+const Single = ({ img, title, info, chart, activities }: SingleProps) => {
     return (
         <div className="single">
             <div className="view">
@@ -93,10 +93,8 @@ const Single = ({ id, img, title, info, chart, activities }: SingleProps) => {
                 <hr />
                 {chart && (
                     <div className="chart">
-                        <ResponsiveContainer width="100%" height="100%">
+                        <ResponsiveContainer width="99%" height="100%">
                             <LineChart
-                                width={500}
-                                height={300}
                                 data={chart?.data || data}
                                 margin={{
                                     top: 5,
@@ -110,19 +108,14 @@ const Single = ({ id, img, title, info, chart, activities }: SingleProps) => {
                                 <Tooltip />
                                 <Legend />
 
-                                {chart.datakeys.map(
-                                    (datakey: {
-                                        name: string;
-                                        color: string;
-                                    }) => (
-                                        <Line
-                                            type="monotone"
-                                            dataKey={datakey.name}
-                                            stroke={datakey.color}
-                                            activeDot={{ r: 8 }}
-                                        />
-                                    )
-                                )}
+                                {chart.dataKeys.map((dataKey) => (
+                                    <Line
+                                        type="monotone"
+                                        dataKey={dataKey.name}
+                                        stroke={dataKey.color}
+                                        activeDot={{ r: 8 }}
+                                    />
+                                ))}
                             </LineChart>
                         </ResponsiveContainer>
                     </div>
@@ -130,16 +123,20 @@ const Single = ({ id, img, title, info, chart, activities }: SingleProps) => {
             </div>
             <div className="activities">
                 <h2>Latest Activities</h2>
-                <ul>
-                    <li>
-                        <div>
-                            <p>
-                                John Doe purchased Playstation 5 Digital Edition
-                            </p>
-                            <time>3 days ago</time>
-                        </div>
-                    </li>
-                </ul>
+                {activities && (
+                    <ul>
+                        {activities.map(
+                            (activity: { text: string; time: string }) => (
+                                <li key={activity.text}>
+                                    <div>
+                                        <p>{activity.text}</p>
+                                        <time>{activity.time}</time>
+                                    </div>
+                                </li>
+                            )
+                        )}
+                    </ul>
+                )}
             </div>
         </div>
     );
