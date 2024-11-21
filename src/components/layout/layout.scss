@@ -5,18 +5,24 @@
     display: flex;
     flex: 1;
     position: relative;
-    margin-top: 50px;
-    margin-bottom: 30px;
+
+
+    @include lg {
+        padding-top: 80px;
+    }
 }
 
 .menuContainer {
-    position: fixed;
-    top: 80px;
-    bottom: 30px;
-    left: 0;
     width: 250px;
     padding: 5px 20px;
     border-right: 2px solid $soft-bg;
+
+    @include lg {
+        position: fixed;
+        top: 80px;
+        bottom: 30px;
+        left: 0;
+    }
 
 
     @include lg {
@@ -25,9 +31,13 @@
 }
 
 .contentContainer {
-    margin-left: 250px;
     width: calc(100% - 250px);
     padding: 5px 20px;
+
+    @include lg {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
 
     @include lg {
         margin-left: 80px;
