@@ -1,6 +1,6 @@
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { useState } from 'react';
-import '../users/users.scss';
+import './products.scss';
 import { DataTable, Add } from '../../components';
 import Avatar from '../../assets/icons/noavatar.png';
 import { products } from '../../data.ts';
